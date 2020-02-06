@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<form action=".">
+<div class="top_bar">
+	<h1>{{ page.meta['title'] }}</h1>
+	<button type="submit" name="action" value="edit">Edit</button>
+</div>
+<div class="content">
+{{ page.render()|safe }}
+</div>
+</form>
+{% endblock %}
