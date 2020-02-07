@@ -2,4 +2,5 @@ Flask==1.1.1
 Markdown==3.1.1
 Werkzeug==0.16.0
 html-sanitizer==1.9.0
+PyYAML==5.1.2
 git+https://github.com/david672orford/wsgi_door
