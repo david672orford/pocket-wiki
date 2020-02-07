@@ -30,6 +30,20 @@ H2, P {
 	margin-bottom: 0.5em;
 	}
 
+TABLE {
+	border-collapse: collapse;
+	}
+TH, TD {
+	border: thin solid black;
+	padding: .4em .5em;
+	}
+
+UL {
+	}
+LI {
+	margin: .2em 0;
+	}
+
 DIV.top_bar {
 	display: flex;
 	flex-direction: row;
@@ -43,6 +57,10 @@ DIV.top_bar > H1 {
 	}
 DIV.top_bar > BUTTON {
 	margin: 0 .2em;
+	}
+DIV.top_bar A {
+	text-decoration: underline;
+	color: inherit;
 	}
 
 DIV.field {

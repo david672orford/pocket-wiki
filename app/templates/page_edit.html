@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<form class="edit" action="." method="POST">
+<form class="edit" action="{{request.path}}" method="POST">
 <div class="top_bar">
 	<h1>Edit Wiki Page</h1>
 	<button type="submit" name="action" value="cancel">Cancel</button>

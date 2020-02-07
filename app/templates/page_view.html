@@ -1,8 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-<form action=".">
+<form action="{{request.path}}">
 <div class="top_bar">
-	<h1>{{ page.meta['title'] }}</h1>
+	<h1>
+	{% for text, href in breadcrumbs %}
+		{% if loop.index0 != 0 %} 🡒 {% endif %}
+		<a href="{{href}}">{{text}}</a>
+	{% endfor %}
+	🡒 {{ page.meta['title'] }}
+	</h1>
 	<button type="submit" name="action" value="edit">Edit</button>
 </div>
 <div class="content">
