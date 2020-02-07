@@ -39,8 +39,8 @@ TH, TD {
 	padding: .4em .5em;
 	}
 
-UL {
-	margin: .3em 0;
+UL, OL {
+	margin: .3em 0 .3em 1.5em;
 	}
 LI {
 	margin: .2em 0;
