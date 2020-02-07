@@ -27,7 +27,6 @@ start:
 		-d --restart=always \
 		--net $(DOCKER_NET) --ip $(DOCKER_IP) \
 		-v `pwd`/instance:/app/instance \
-		-p 5000:5000/udp \
 		$(NAME)
 
 stop:
