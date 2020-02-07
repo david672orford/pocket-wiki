@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, abort
+from flask import Flask, request, render_template, abort, redirect
 import markdown
 import yaml
 import os
@@ -89,8 +89,9 @@ def page(path):
 		page.meta['title'] = request.form['title']
 		page.content = request.form['content']
 		page.save()
+		return redirect(request.url)
 
-	elif action == 'edit' or page.is_new:
+	if action == 'edit' or page.is_new:
 		return render_template("page_edit.html", page=page)
 
 	breadcrumbs = [(app.config['APP_DISPLAY_NAME'], '/')]
