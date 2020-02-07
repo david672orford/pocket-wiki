@@ -8,7 +8,8 @@ from operator import itemgetter
 
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_mapping(
-	APP_DISPLAY_NAME = 'Pocket Wiki'
+	APP_DISPLAY_NAME = 'Pocket Wiki',
+	)
 app.config.from_pyfile('config.py')
 
 class Wiki(object):
