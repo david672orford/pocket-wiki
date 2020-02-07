@@ -1,4 +1,4 @@
-NAME=phoneman
+NAME=pocket-wiki
 DOCKER_NET=static
 DOCKER_IP=172.18.0.5
 
