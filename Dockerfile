@@ -1,4 +1,4 @@
-FROM python:3.6.4-alpine3.7
+FROM python:3.7-alpine
 MAINTAINER David Chappell <David.Chappell@trincoll.edu>
 RUN apk add --no-cache git
 RUN apk add --no-cache --virtual .build-deps gcc libc-dev libxslt-dev && \
