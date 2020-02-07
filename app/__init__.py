@@ -25,7 +25,7 @@ class Wiki(object):
 				"table", "thead", "tbody", "tr", "th", "td",
 				),	
 			remove_unknown_tags = False,
-			safe_attrs = set(["class"]),
+			safe_attrs = set(["class","href"]),
 			)
 	def renderer(self, text):
 		html = self.markdown.convert(text)
