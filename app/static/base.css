@@ -1,7 +1,7 @@
 * {
 	box-sizing: border-box;
 	}
-HTML, BODY, H1, H2, P, FORM, TEXTAREA, PRE, UL, OL, LI, {
+HTML, BODY, H1, H2, P, FORM, TEXTAREA, PRE, UL, OL, LI {
 	margin: 0;
 	padding: 0;
 	border: 0;
