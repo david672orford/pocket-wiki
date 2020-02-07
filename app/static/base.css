@@ -1,7 +1,7 @@
 * {
 	box-sizing: border-box;
 	}
-HTML, BODY, H1, H2, P, FORM, TEXTAREA, PRE {
+HTML, BODY, H1, H2, P, FORM, TEXTAREA, PRE, UL, OL, LI, {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -24,7 +24,7 @@ H1 {
 	font-size: 120%;
 	}
 H2 {
-	font-size: 100%;
+	font-size: 110%;
 	}
 H2, P {
 	margin-bottom: 0.5em;
@@ -40,6 +40,7 @@ TH, TD {
 	}
 
 UL {
+	margin: .3em 0;
 	}
 LI {
 	margin: .2em 0;
