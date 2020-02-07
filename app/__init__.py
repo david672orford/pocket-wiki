@@ -7,7 +7,8 @@ from glob import glob
 from operator import itemgetter
 
 app = Flask(__name__, instance_relative_config=True)
-app.config['APP_NAME'] = 'Unnamed Wiki'
+app.config.from_mapping(
+	APP_DISPLAY_NAME = 'Pocket Wiki'
 app.config.from_pyfile('config.py')
 
 class Wiki(object):
@@ -91,7 +92,7 @@ def page(path):
 	elif action == 'edit' or page.is_new:
 		return render_template("page_edit.html", page=page)
 
-	breadcrumbs = [(app.config['APP_NAME'], '/')]
+	breadcrumbs = [(app.config['APP_DISPLAY_NAME'], '/')]
 	for i in range(len(folders)):
 		breadcrumbs.append((folders[i].capitalize(), "/" + "/".join(folders[:i+1]) + "/"))
 
