@@ -1,9 +1,13 @@
 {% extends "base.html" %}
-{% block content %}
+{%- block content %}
 <form action="{{request.path}}">
-<div class="top_bar">
-	<h1><a href="/">{{ config['APP_DISPLAY_NAME'] }}</a> 🡒 Sitemap</h1>
-</div>
+<nav class="top_bar">
+	<h1>
+		<a href="/">{{ config['APP_DISPLAY_NAME'] }}</a>
+		🡒 Sitemap
+	</h1>
+</nav>
+<main>
 <table>
 <tbody>
 {% for title, href in pages %}
@@ -11,4 +15,5 @@
 {% endfor %}
 </tbody>
 </table>
-{% endblock %}
+</main>
+{% endblock -%}

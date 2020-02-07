@@ -1,7 +1,7 @@
 * {
 	box-sizing: border-box;
 	}
-HTML, BODY, H1, H2, P, FORM, TEXTAREA {
+HTML, BODY, H1, H2, P, FORM, TEXTAREA, PRE {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -32,6 +32,7 @@ H2, P {
 
 TABLE {
 	border-collapse: collapse;
+	margin: .3em 0;
 	}
 TH, TD {
 	border: thin solid black;
@@ -44,21 +45,21 @@ LI {
 	margin: .2em 0;
 	}
 
-DIV.top_bar {
+NAV.top_bar {
 	display: flex;
 	flex-direction: row;
 	background-color: black;
 	margin: -.5em -.5em .5em -.5em;
 	padding: .5em;
 	}
-DIV.top_bar > H1 {
+NAV.top_bar > H1 {
 	flex-grow: 1;
 	color: white;
 	}
-DIV.top_bar > BUTTON {
+NAV.top_bar > BUTTON {
 	margin: 0 .2em;
 	}
-DIV.top_bar A {
+NAV.top_bar A {
 	text-decoration: underline;
 	color: inherit;
 	}
@@ -89,5 +90,15 @@ TEXTAREA {
 	border: thin solid black;
 	margin: .5em 0;
 	padding: .5em;
+	}
+
+TABLE.codehilitetable {
+	background-color: #e0ffe0;
+	}
+TABLE.codehilitetable TD {
+	border: none;
+	}
+PRE {
+	padding: .2em;
 	}
 

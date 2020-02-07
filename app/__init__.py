@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, abort, redirect
 import markdown
 import yaml
 import os
-from html_sanitizer import Sanitizer
+from lxml.html.clean import Cleaner
 from glob import glob
 from operator import itemgetter
 
@@ -14,10 +14,22 @@ app.config.from_pyfile('config.py')
 
 class Wiki(object):
 	def __init__(self):
-		self.sanitizer = Sanitizer(settings={'sanitize_href':lambda href: href})
+		self.markdown = markdown.Markdown(extensions=['tables', 'codehilite', 'fenced_code', 'smarty'])
+		self.cleaner = Cleaner(
+			allow_tags = (
+				"a",
+				"h1", "h2", "h3",
+				"strong", "em", "b", "i", "sub", "sup",
+				"p", "br", "hr", "pre", "div",
+				"ul", "ol", "li",
+				"table", "thead", "tbody", "tr", "th", "td",
+				),	
+			remove_unknown_tags = False,
+			safe_attrs = set(["class"]),
+			)
 	def renderer(self, text):
-		html = markdown.markdown(text)
-		html = self.sanitizer.sanitize(html)
+		html = self.markdown.convert(text)
+		html = self.cleaner.clean_html(html)
 		return html
 
 class WikiPage(object):
@@ -28,7 +40,7 @@ class WikiPage(object):
 			with open(self.path, 'r', encoding='utf-8') as f:
 				text = f.read()
 				if text.startswith("---"):
-					parts = text.split("---\n")
+					parts = text.split("---\n",2)
 					self.meta = yaml.safe_load(parts[1])
 					self.content = parts[2]
 				else:

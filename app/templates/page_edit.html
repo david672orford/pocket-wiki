@@ -1,15 +1,15 @@
 {% extends "base.html" %}
-{% block content %}
+{%- block content %}
 <form class="edit" action="{{request.path}}" method="POST">
-<div class="top_bar">
+<nav class="top_bar">
 	<h1>Edit Wiki Page</h1>
 	<button type="submit" name="action" value="cancel">Cancel</button>
 	<button type="submit" name="action" value="save">Save</button>
-</div>
+</nav>
 <div class="field">
 	<label>Title</label>
 	<input type="text" name="title" value="{{ page.meta['title'] }}">
 </div>
 <textarea id="content" name="content">{% if page.content %}{{ page.content }}{% endif %}</textarea>
 </form>
-{% endblock %}
+{% endblock -%}
