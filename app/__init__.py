@@ -17,7 +17,7 @@ class Wiki(object):
 		self.markdown = markdown.Markdown(extensions=['tables', 'codehilite', 'fenced_code', 'smarty'])
 		self.cleaner = Cleaner(
 			allow_tags = (
-				"a",
+				"a", "img",
 				"h1", "h2", "h3",
 				"strong", "em", "b", "i", "sub", "sup",
 				"p", "br", "hr", "pre", "div",
@@ -25,7 +25,7 @@ class Wiki(object):
 				"table", "thead", "tbody", "tr", "th", "td",
 				),	
 			remove_unknown_tags = False,
-			safe_attrs = set(["class","href"]),
+			safe_attrs = set(["class", "href", "src", "alt"]),
 			)
 	def renderer(self, text):
 		html = self.markdown.convert(text)
