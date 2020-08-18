@@ -1,7 +1,7 @@
 * {
 	box-sizing: border-box;
 	}
-HTML, BODY, H1, H2, P, FORM, TEXTAREA, PRE, UL, OL, LI {
+HTML, BODY, H1, H2, H3, H4, H5, H6, P, FORM, TEXTAREA, PRE, UL, OL, LI, TABLE, TR, TD, TH {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -13,26 +13,63 @@ BODY {
 	font-family: serif;
 	font-size: 12pt;
 	}
-FORM {
-	padding: .5em;
+MAIN {
+	padding: 0.5em;
 	}
-H1, H2, LABEL {
+
+BODY > FORM > HEADER {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: #45aeea;		/* COLOR */
 	font-family: sans-serif;
 	font-weight: bold;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+	border-bottom: 1px solid #1990d5;
+	}
+BODY > FORM > HEADER > H1 {
+	flex-grow: 1;
+	color: white;
+	margin: 0;
+	font-size: 125%;
+	font-weight: inherit;
+	line-height: 150%;
+	}
+BODY > FORM > HEADER A {
+	display: inline-block;
+	color: inherit;
+	text-decoration: inherit;
+	padding: .5em;
+	}
+BODY > FORM > HEADER H1 A:hover {
+	background-color: #1684c2;
+	}
+BODY > FORM > HEADER > BUTTON {
+	margin: 0 .5em;
+	padding: .3em .5em;
+	}
+
+H1, H2, H3, H4, H5, H6, LABEL {
+	font-family: sans-serif;
+	font-weight: bold;
+	}
+H1, H2, H3, H4, H5, H6 {
+	margin: 0.2em 0;
 	}
 H1 {
 	font-size: 120%;
 	}
 H2 {
 	font-size: 110%;
+	margin-top: 0.1em;
 	}
-H2, P {
+P {
 	margin-bottom: 0.5em;
 	}
 
 TABLE {
 	border-collapse: collapse;
-	margin: .3em 0;
+	margin-bottom: 0.5em;
 	}
 TH, TD {
 	border: thin solid black;
@@ -40,36 +77,22 @@ TH, TD {
 	}
 
 UL, OL {
-	margin: .3em 0 .3em 1.5em;
+	margin: 0 0 .5em 1.5em;
 	}
 LI {
 	margin: .2em 0;
 	}
 
-NAV.top_bar {
+/* Edit mode */
+FORM.edit {
 	display: flex;
-	flex-direction: row;
-	background-color: black;
-	margin: -.5em -.5em .5em -.5em;
-	padding: .5em;
+	flex-direction: column;
 	}
-NAV.top_bar > H1 {
-	flex-grow: 1;
-	color: white;
-	}
-NAV.top_bar > BUTTON {
-	margin: 0 .2em;
-	}
-NAV.top_bar A {
-	text-decoration: underline;
-	color: inherit;
-	}
-
-DIV.field {
+DIV.field {						/* metadata field */
 	display: flex;
 	flex-direction: row;
 	align-items: baseline;
-	margin: .5em 0;
+	margin: .5em .5em 0 .5em;
 	}
 DIV.field > LABEL {
 	margin-right: .5em;
@@ -78,23 +101,17 @@ DIV.field > INPUT[type="text"] {
 	flex-grow: 1;
 	padding: .2em;
 	}
-
-FORM.edit {
-	display: flex;
-	flex-direction: column;
-	}
-
 TEXTAREA {
 	display: block;
-	width: 100%;
+	width: calc(100% - 1em);
 	flex-grow: 1;
 	border: thin solid black;
-	margin: .5em 0;
+	margin: .5em;
 	padding: .5em;
 	}
 
 TABLE.codehilitetable {
-	background-color: #e0ffe0;
+	background-color: #e4e8FF;	/* COLOR */
 	}
 TABLE.codehilitetable TD {
 	border: none;

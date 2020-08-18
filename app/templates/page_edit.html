@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {%- block content %}
 <form class="edit" action="{{request.path}}" method="POST">
-<nav class="top_bar">
+<header>
 	<h1>Edit Wiki Page</h1>
 	<button type="submit" name="action" value="cancel">Cancel</button>
 	<button type="submit" name="action" value="save">Save</button>
-</nav>
+</header>
 <div class="field">
 	<label>Title</label>
 	<input type="text" name="title" value="{{ page.meta['title'] }}">

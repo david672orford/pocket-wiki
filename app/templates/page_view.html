@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content -%}
 <form action="{{request.path}}">
-<nav class="top_bar">
+<header>
 	<h1>
 	{% for text, href in breadcrumbs -%}
 	{% if loop.index0 != 0 %} 🡒 {% endif -%}<a href="{{href}}">{{text}}</a>
@@ -9,9 +9,11 @@
 	🡒 {{ page.meta['title'] }}
 	</h1>
 	<button type="submit" name="action" value="edit">Edit</button>
-</nav>
+</header>
 <main>
-{{ page.render()|safe }}
+	<article>
+		{{ page.render()|safe }}
+	</article>
 </main>
 </form>
 {%- endblock %}

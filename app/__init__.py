@@ -73,11 +73,15 @@ class WikiPage(object):
 
 wiki = Wiki()
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET','POST'])
 def index():
 	return page('index')
 
-@app.route('/<path:path>', methods=['GET', 'POST'])
+@app.route('/favicon.ico')
+def favicon():
+	abort(404)
+
+@app.route('/<path:path>', methods=['GET','POST'])
 def page(path):
 	if path.endswith("/"):
 		folders = path.split('/')[:-2]
