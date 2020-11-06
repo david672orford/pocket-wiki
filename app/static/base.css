@@ -116,6 +116,9 @@ TABLE.codehilitetable {
 TABLE.codehilitetable TD {
 	border: none;
 	}
+.codehighlite {
+	margin: 0 0 .5em .5em;
+	}
 PRE {
 	padding: .2em;
 	}
