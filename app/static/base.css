@@ -118,6 +118,7 @@ TABLE.codehilitetable TD {
 	}
 .codehighlite {
 	margin: 0 0 .5em .5em;
+	border: 1px solid #e0e0e0;
 	}
 PRE {
 	padding: .2em;
