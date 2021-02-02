@@ -2,6 +2,7 @@ DOCKER_IMAGE=pocket-wiki
 DOCKER_CONTAINER=pocket-wiki
 DOCKER_NET=static
 DOCKER_IP=172.18.0.5
+UID=$(shell ls -ldn instance | cut -d' ' -f3)
 
 all: pull build restart
 
@@ -9,10 +10,10 @@ pull:
 	git pull
 
 build:
-	docker build -t $(DOCKER_IMAGE) .
+	docker build --build-arg uid=$(UID) --tag $(DOCKER_IMAGE) .
 
 build-no-cache:
-	docker build --no-cache -t $(DOCKER_IMAGE) .
+	docker build --no-cache --build-arg uid=$(UID) --tag $(DOCKER_IMAGE) .
 
 debug:
 	docker run --rm -it \
@@ -37,8 +38,8 @@ shell:
 	docker exec -it $(DOCKER_CONTAINER) /bin/sh
 
 logs:
-	docker logs $(DOCKER_CONTAINER)
+	docker logs $(DOCKER_CONTAINER) 2>&1
 
 tail:
-	docker logs -f $(DOCKER_CONTAINER)
+	docker logs -f $(DOCKER_CONTAINER) 2>&1
 

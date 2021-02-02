@@ -35,6 +35,9 @@ BODY > FORM > HEADER > H1 {
 	font-weight: inherit;
 	line-height: 150%;
 	}
+BODY > FORM.edit > HEADER > H1 {
+	padding: .5em;
+	}
 BODY > FORM > HEADER A {
 	display: inline-block;
 	color: inherit;
