@@ -36,13 +36,13 @@ BODY > FORM > HEADER > H1 {
 	line-height: 150%;
 	}
 BODY > FORM.edit > HEADER > H1 {
-	padding: .5em;
+	padding: .3em;
 	}
 BODY > FORM > HEADER A {
 	display: inline-block;
 	color: inherit;
 	text-decoration: inherit;
-	padding: .5em;
+	padding: .3em;
 	}
 BODY > FORM > HEADER H1 A:hover {
 	background-color: #1684c2;
