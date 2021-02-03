@@ -56,11 +56,8 @@ H1, H2, H3, H4, H5, H6, LABEL {
 	font-family: sans-serif;
 	font-weight: bold;
 	}
-H1, H2, H3, H4, H5, H6 {
-	margin-bottom: .5rem;
-	}
 H2, H3, H4, H5, H6 {
-	margin-top: 1rem;
+	margin: .5em 0;
 	}
 H1 {
 	font-size: 120%;
