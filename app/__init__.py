@@ -8,8 +8,7 @@ from glob import glob
 from operator import itemgetter
 
 app = Flask(__name__, instance_relative_config=True)
-app.config.from_mapping(
-default_config = (
+default_config = dict(
 	APP_DISPLAY_NAME = 'Pocket Wiki',
 	SECRET_KEY = None,
 	)

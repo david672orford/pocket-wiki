@@ -2,7 +2,7 @@
 
 DOCKER_CONTAINER = "pocket-wiki"
 DOCKER_NET = "static"
-DOCKER_IP = "172.18.0.5"
+DOCKER_IP = "172.18.0.X"
 
 # Change this to a secret value before deployment (required)
 #SECRET_KEY = 'put random characters here'
