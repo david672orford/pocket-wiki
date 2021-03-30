@@ -1,0 +1,15 @@
+#! /usr/bin/python3
+# Pull docker options from instance/config.py
+
+import os, sys
+
+with open("instance/config.py") as config:
+	exec(config.read())
+
+if len(sys.argv) >= 2 and sys.argv[1] == "--docker-container":
+	print(DOCKER_CONTAINER)
+else:
+	print("--name {DOCKER_CONTAINER}".format(**locals()))
+	print("--net {DOCKER_NET} --ip {DOCKER_IP}".format(**locals()))
+	print("-v /etc/localtime:/etc/localtime:ro")
+	print("-v {cwd}/instance:/app/instance".format(cwd=os.getcwd()))

@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template, abort, redirect
 import markdown
 import yaml
-import os
+import os, sys
 import re
 from lxml.html.clean import Cleaner
 from glob import glob
@@ -9,9 +9,20 @@ from operator import itemgetter
 
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_mapping(
+default_config = (
 	APP_DISPLAY_NAME = 'Pocket Wiki',
+	SECRET_KEY = None,
 	)
+app.config.from_mapping(**default_config)
 app.config.from_pyfile('config.py')
+
+error_count = 0
+for item in default_config.keys():
+	if app.config[item] is None:
+		sys.stderr.write("ERROR: Required configuration item %s is not defined\n" % item)
+		error_count += 1
+if error_count > 0:
+	sys.exit(1)
 
 class Wiki(object):
 	def __init__(self):

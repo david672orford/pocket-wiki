@@ -6,8 +6,9 @@ will open so you can enter the initial text.
 
 ## TODO
 
-* History stored using Git
-* Images
+* Commit changes to a Git repository
+* Images and file attachments
+* Bug: if you save a new page with no text, viewing causes an internal server error
 
 ## Coding References
 
