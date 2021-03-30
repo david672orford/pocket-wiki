@@ -42,6 +42,9 @@ class Wiki(object):
 
 	# Convert Markdown to HTML
 	def renderer(self, text):
+		text = text.strip()
+		if text == "":
+			return ""
 		html = self.markdown.convert(text)
 		html = self.cleaner.clean_html(html)
 		return html
@@ -86,9 +89,9 @@ class WikiPage(object):
 					self.meta = {}
 					self.content = text
 			self.is_new = False
-		except FileNotFoundError:
+		except FileNotFoundError:						# new page
 			self.meta = {}
-			self.content = None
+			self.content = ""
 			self.is_new = True
 
 		if not 'title' in self.meta:
@@ -96,8 +99,6 @@ class WikiPage(object):
 
 	# Convert the wiki page body from Markdown to an HTML fragment
 	def render(self):
-		if self.content is None:
-			return None
 		return self.wiki.renderer(self.content)
 
 	# Save self.content to the markdown file
